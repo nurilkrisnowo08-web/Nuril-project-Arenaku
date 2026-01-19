@@ -1,0 +1,31 @@
+# PHP
+*.log
+*.cache
+
+# Database
+*.sql.gz
+*.sql.zip
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Upload folder (optional - uncomment if you don't want to track uploads)
+# upload/*
+# !upload/.gitkeep
+
+# Sensitive files
+config.php
+.env
+
+# Temporary files
+tmp/
+temp/
+*.tmp

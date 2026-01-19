@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arena KU</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      color: #111;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background-color: white;
+      border-bottom: 1px solid #ddd;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .logo img {
+      height: 48px; /* LOGO DIPERBESAR DI SINI */
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+      font-size: 16px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #C3002F;
+    }
+
+    .auth {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .auth a {
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .btn-daftar {
+      background-color: #C3002F;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+    }
+
+    .hero {
+      position: relative;
+      background: url('images/backdas.png') no-repeat center center;
+      background-size: cover;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 60px;
+      height: 100vh;
+      margin-top: 90px;
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .download-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .download-buttons a {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 16px;
+      background: white;
+      color: #000;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .download-buttons img {
+      width: 20px;
+      margin-right: 8px;
+    }
+
+    .hero-image {
+      position: relative;
+      max-width: 400px;
+    }
+
+    .hero-image img {
+      width: 100%;
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+
+    .caption span {
+      display: block;
+      font-weight: 400;
+      font-size: 14px;
+      color: #ddd;
+    }
+
+    section {
+      padding: 100px 60px;
+      min-height: 100vh;
+    }
+
+    section h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    #main-bareng {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f8f8f8, #ffffff);
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  #main-bareng h1 {
+    font-size: 2.5rem;
+    color: #C3002F;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  #main-bareng p {
+    font-size: 1.1rem;
+    color: #444;
+    max-width: 700px;
+    margin: 0 auto 40px;
+  }
+
+  .main-bareng-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .main-bareng-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    padding: 25px;
+    transition: transform 0.3s ease;
+  }
+
+  .main-bareng-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .main-bareng-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+
+  .main-bareng-card h3 {
+    font-size: 1.2rem;
+    color: #C3002F;
+    margin-bottom: 10px;
+  }
+
+  .main-bareng-card p {
+    font-size: 0.95rem;
+    color: #666;
+  }
+
+  @media (max-width: 768px) {
+    #main-bareng h1 {
+      font-size: 2rem;
+    }
+
+    .main-bareng-card img {
+      height: 150px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="images/logobaru.png" alt="Logo">
+    </div>
+    <nav>
+      <a href="login.php">Sewa Lapangan</a>
+      <a href="#main-bareng">Main Bareng</a>
+      <a href="#sparring">Sparring</a>  
+      <a href="#blog">Blog</a>
+    </nav>
+    <div class="auth">
+      <a href="login.php">Masuk</a>
+      <a href="register.php" class="btn-daftar">Daftar</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <!-- Bisa ditambahkan teks hero di sini -->
+    </div>
+    <div class="hero-image">
+      <div class="caption">
+        <!-- Caption jika ada -->
+      </div>
+    </div>
+  </section>
+
+  <section id="main-bareng">
+  <h1>Main Bareng</h1>
+  <p>Temukan partner olahraga baru dan jadwalkan sesi latihan seru bersama komunitas olahraga di sekitar Anda.</p>
+
+  <div class="main-bareng-grid">
+    <div class="main-bareng-card">
+      <img src="upload/download.jpeg" alt="Futsal Team">
+      <h3>Tim Futsal Mingguan</h3>
+      <p>Gabung komunitas futsal setiap Jumat malam di Lapangan Arena KU - Jakarta.</p>
+    </div>
+
+    <div class="main-bareng-card">
+      <img src="upload/bultang.jpeg" alt="Badminton">
+      <h3>Duet Badminton</h3>
+      <p>Cari pasangan untuk latihan rutin badminton di area Bekasi & sekitarnya.</p>
+    </div>
+
+    <div class="main-bareng-card">
+      <img src="upload/basket.jpeg" alt="Basketball">
+      <h3>Komunitas Basket Pagi</h3>
+      <p>Latihan bareng komunitas basket pagi setiap Sabtu & Minggu di area Tangerang.</p>
+    </div>
+  </div>
+</section>
+
+  <section id="sparring" style="padding: 50px; background: #f9f9f9; font-family: 'Segoe UI', sans-serif;">
+  <div style="max-width: 1000px; margin: auto;">
+    <h1 style="text-align: center; color: #e74c3c; margin-bottom: 10px; font-size: 36px;">Sparring</h1>
+    <p style="text-align: center; font-size: 18px; color: #555; margin-bottom: 40px;">
+      Tantang tim lain, asah kekompakan, dan jadilah juara sejati di lapangan!
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+      <!-- Card 1 -->
+      <div style="background: #fff; padding: 25px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: 0.3s;">
+        <h3 style="color: #d63031;">Uji Strategi Tim</h3>
+        <p style="color: #444;">Sparring memberikan kesempatan untuk menguji pola permainan, taktik, dan formasi tim Anda dalam situasi nyata tanpa tekanan turnamen.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background: #fff; padding: 25px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: 0.3s;">
+        <h3 style="color: #d63031;">Pererat Kekompakan</h3>
+        <p style="color: #444;">Dengan bermain melawan lawan yang berbeda, tim Anda bisa memperkuat kerja sama, komunikasi, dan semangat kompetitif yang sehat.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background: #fff; padding: 25px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: 0.3s;">
+        <h3 style="color: #d63031;">Buat Jadwal Sendiri</h3>
+        <p style="color: #444;">Atur jadwal sparring sesuai waktu dan lapangan yang diinginkan. Bebas pilih waktu terbaik untuk adu kemampuan!</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="jadwal_sparring.html" style="padding: 14px 30px; background: #e74c3c; color: white; border-radius: 10px; text-decoration: none; font-size: 16px;">
+        Jadwalkan Sparring Sekarang
+      </a>
+    </div>
+  </div>
+</section>
+
+
+  <section id="blog" style="padding: 60px;">
+  <h1 style="text-align: center; font-size: 36px; margin-bottom: 10px;">Blog</h1>
+  <p style="text-align: center; font-size: 16px; color: #555;">Baca berbagai artikel seputar olahraga, tips latihan, dan cerita inspiratif dari pengguna Arena KU.</p>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+
+    <!-- Blog 1 -->
+    <div style="border: 1px solid #ddd; border-radius: 10px; overflow: hidden; background: #fafafa;">
+      <img src="upload/latihanfiaik.jpeg" alt="Tips Latihan Fisik" style="width: 100%; height: 200px; object-fit: cover;">
+      <div style="padding: 20px;">
+        <h3>5 Tips Latihan Fisik untuk Pemula</h3>
+        <p>Mulai latihan olahraga dengan aman dan efektif menggunakan tips sederhana ini. Cocok untuk semua usia!</p>
+        <a href="blog1.html" style="display: inline-block; margin-top: 10px; color: #C3002F; font-weight: 600; text-decoration: none;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Blog 2 -->
+    <div style="border: 1px solid #ddd; border-radius: 10px; overflow: hidden; background: #fafafa;">
+      <img src="upload/Strategi Sparring yang Efektif.jpeg" alt="Strategi Sparring" style="width: 100%; height: 200px; object-fit: cover;">
+      <div style="padding: 20px;">
+        <h3>Strategi Sparring yang Efektif</h3>
+        <p>Sparring bukan hanya soal menang, tapi juga belajar teknik dan kerja sama tim. Simak strateginya!</p>
+        <a href="blog2.html" style="display: inline-block; margin-top: 10px; color: #C3002F; font-weight: 600; text-decoration: none;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Blog 3 -->
+    <div style="border: 1px solid #ddd; border-radius: 10px; overflow: hidden; background: #fafafa;">
+      <img src="images/Background/nutrisi.jpeg" alt="Nutrisi Atlet" style="width: 100%; height: 200px; object-fit: cover;">
+      <div style="padding: 20px;">
+        <h3>Nutrisi Tepat untuk Atlet Harian</h3>
+        <p>Asupan yang tepat bisa meningkatkan performa olahraga. Kenali nutrisi penting yang wajib dikonsumsi.</p>
+        <a href="blog3.html" style="display: inline-block; margin-top: 10px; color: #C3002F; font-weight: 600; text-decoration: none;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Blog 4 -->
+    <div style="border: 1px solid #ddd; border-radius: 10px; overflow: hidden; background: #fafafa;">
+      <img src="upload/komunitas mini soccer.jpeg" alt="Komunitas Arena KU" style="width: 100%; height: 200px; object-fit: cover;">
+      <div style="padding: 20px;">
+        <h3>Kisah Sukses dari Komunitas Arena KU</h3>
+        <p>Dari hobi jadi prestasi. Baca kisah para pengguna Arena KU yang berhasil menembus turnamen lokal!</p>
+        <a href="blog4.html" style="display: inline-block; margin-top: 10px; color: #C3002F; font-weight: 600; text-decoration: none;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Blog 5 -->
+    <div style="border: 1px solid #ddd; border-radius: 10px; overflow: hidden; background: #fafafa;">
+      <img src="upload/lapagan4.jpg" alt="Lapangan Favorit" style="width: 100%; height: 200px; object-fit: cover;">
+      <div style="padding: 20px;">
+          <h3>Lapangan Favorit di Jakarta & Sekitarnya</h3>
+          <p>Mau main futsal, basket, atau badminton? Ini dia daftar lapangan rekomendasi dari pengguna kami!</p>
+        <a href="blog5.html" style="display: inline-block; margin-top: 10px; color: #C3002F; font-weight: 600; text-decoration: none;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Blog 6 -->
+    <div style="border: 1px solid #ddd; border-radius: 10px; overflow: hidden; background: #fafafa;">
+      <img src="upload/manfaat.jpeg" alt="Manfaat Olahraga Rutin" style="width: 100%; height: 200px; object-fit: cover;">
+      <div style="padding: 20px;">
+        <h3>Manfaat Olahraga Rutin untuk Mental</h3>
+        <p>Olahraga bukan cuma untuk fisik, tapi juga mental. Temukan manfaat psikologis dari olahraga teratur!</p>
+        <a href="blog6.html" style="display: inline-block; margin-top: 10px; color: #C3002F; font-weight: 600; text-decoration: none;">Read More →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background-color: #111; color: #aaa; padding: 60px 20px 100px; font-family: 'Inter', sans-serif;">
+  <div style="max-width: 1100px; margin: auto; text-align: center;">
+
+    <!-- Logo dan Group -->
+    <img src="images/logobaru.png" alt="Arena KU" style="height: 60px; margin-bottom: 10px;">
+    <p style="font-size: 1.1rem; font-weight: 600; color: #eee;">Member of the Arena Indonesia Group</p>
+
+    <!-- Navigation Links -->
+    <div style="margin: 30px 0; font-size: 0.9rem; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+      <a href="#" style="text-decoration: none; color: #aaa;">Terms of Use</a>
+      <a href="#" style="text-decoration: none; color: #aaa;">Privacy Policy</a>
+      <a href="#" style="text-decoration: none; color: #aaa;">Cookie Policy</a>
+    </div>
+
+    <!-- Copyright -->
+    <p style="font-size: 0.85rem; color: #666;">&copy; 2025 Arena KU. All rights reserved. Powered by Arena Group.</p>
+
+    <!-- Social Icons -->
+    <div style="margin-top: 30px; font-size: 1.2rem;">
+      <a href="https://instagram.com/arena.ku" target="_blank" style="margin: 0 10px; color: #aaa;"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/628123456789" target="_blank" style="margin: 0 10px; color: #aaa;"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" style="margin: 0 10px; color: #aaa;"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" style="margin: 0 10px; color: #aaa;"><i class="fab fa-youtube"></i></a>
+      <a href="#" style="margin: 0 10px; color: #aaa;"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+
+ 
+</footer>
+
+
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jadwalkan Sparring</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f9f9f9;
+    }
+
+    header {
+      background: #e74c3c;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 14px;
+      width: 100%;
+      background: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #c0392b;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Formulir Jadwal Sparring</h1>
+  </header>
+
+  <div class="container">
+    <form action="proses_sparring.php" method="POST">
+      <label for="nama_tim">Nama Tim Anda</label>
+      <input type="text" id="nama_tim" name="nama_tim" required>
+
+      <label for="kontak">Nomor Kontak / WhatsApp</label>
+      <input type="text" id="kontak" name="kontak" required>
+
+      <label for="tanggal">Tanggal Sparring</label>
+      <input type="date" id="tanggal" name="tanggal" required>
+
+      <label for="waktu">Waktu</label>
+      <select id="waktu" name="waktu" required>
+        <option value="">-- Pilih Waktu --</option>
+        <option value="08:00 - 10:00">08:00 - 10:00</option>
+        <option value="10:00 - 12:00">10:00 - 12:00</option>
+        <option value="13:00 - 15:00">13:00 - 15:00</option>
+        <option value="15:00 - 17:00">15:00 - 17:00</option>
+        <option value="19:00 - 21:00">19:00 - 21:00</option>
+      </select>
+
+      <label for="catatan">Catatan Tambahan (opsional)</label>
+      <input type="text" id="catatan" name="catatan" placeholder="Contoh: Lawan tim futsal dari luar kota">
+
+      <button type="submit">Kirim Permintaan Sparring</button>
+    </form>
+  </div>
+
+  <footer>
+    &copy;
+  </footer>
+
+</body>
+</html>
