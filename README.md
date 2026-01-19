@@ -181,11 +181,6 @@ Multiple metode pembayaran dengan QRIS
 - [ ] Integrasi payment gateway
 - [ ] Dashboard analytics untuk admin
 
-## 👨‍💻 Developer
-
-- **Ahmad Syauki**
-- **Zulfan Lutfiansyah**
-
 ## 📄 Lisensi
 
 © 2025 Arena KU. All rights reserved. Powered by Arena Group.
